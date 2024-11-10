@@ -172,14 +172,14 @@ int main(int argc, char **argv)
     write_or_throw("an include", stdout, "#include \"%s\"\n", argv[index]);
   }
 
-  write_or_throw("the header", stdout, "%s%s(\n  %s,\n  %u,\n  {\n    ", argc > 3 ? "\n" : "", argv[1], argv[2], sample_rate);
+  write_or_throw("the header", stdout, "%s%s(\n  %s,\n  %u,\n  ", argc > 3 ? "\n" : "", argv[1], argv[2], sample_rate);
 
   for (size_t sample_index = 0; sample_index < samples_length; sample_index++)
   {
     write_or_throw("a sample", stdout, "%s%ff", sample_index == 0 ? "" : ", ", samples[sample_index]);
   }
 
-  write_or_throw("the footer", stdout, "\n  }\n);\n");
+  write_or_throw("the footer", stdout, "\n);\n");
 
   return 0;
 }
