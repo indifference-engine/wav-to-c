@@ -28,6 +28,10 @@ MACRO_NAME
 
 Currently, only mono 32-bit floating WAV files are supported.
 
+While there is basic test coverage for this utility, error cases currently lack
+test coverage.  Details on these missing test cases can be found in the
+[issue tracker](https://github.com/indifference-engine/wav-to-c/issues).
+
 ## Building
 
 Execute `make` to build the executable, which will be placed at
