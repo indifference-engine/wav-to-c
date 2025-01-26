@@ -68,7 +68,15 @@ int main(int argc, char **argv)
     const uint32_t sub_chunk_bytes = read_u32_or_throw("the sub-chunk size", stdin);
     allocate_chunk_bytes(sub_chunk_bytes);
 
-    if (sub_chunk_id[0] == 'f' && sub_chunk_id[1] == 'm' && sub_chunk_id[2] == 't' && sub_chunk_id[3] == ' ')
+    if (sub_chunk_id[0] == 'L' && sub_chunk_id[1] == 'I' && sub_chunk_id[2] == 'S' && sub_chunk_id[3] == 'T')
+    {
+      skip("a LIST chunk", stdin, sub_chunk_bytes);
+    }
+    else if (sub_chunk_id[0] == 'i' && sub_chunk_id[1] == 'd' && sub_chunk_id[2] == '3' && sub_chunk_id[3] == ' ')
+    {
+      skip("an id3 chunk", stdin, sub_chunk_bytes);
+    }
+    else if (sub_chunk_id[0] == 'f' && sub_chunk_id[1] == 'm' && sub_chunk_id[2] == 't' && sub_chunk_id[3] == ' ')
     {
       if (sample_rate != 0)
       {
