@@ -187,7 +187,7 @@ int main(int argc, char **argv)
     write_or_throw("a sample", stdout, "%s%ff", sample_index == 0 ? "" : ", ", samples[sample_index]);
   }
 
-  write_or_throw("the footer", stdout, "\n);\n");
+  write_or_throw("the footer", stdout, "\n)\n");
 
   return 0;
 }

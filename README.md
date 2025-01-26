@@ -21,7 +21,7 @@ MACRO_NAME
 
   // Samples as signed unit intervals, running sooner to later.
   0.3f, 0.7f, 0.8f, 0.7f, 0.2f, 0.4f
-);
+)
 ```
 
 ## Limitations
